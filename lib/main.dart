@@ -1,5 +1,7 @@
+import 'package:app_enes/sample_data.dart';
 import 'package:flutter/material.dart';
 
+import 'constants.dart';
 import 'custom/listbook.dart';
 import 'custom/mainpage.dart';
 import 'custom/qurancard.dart';
@@ -29,7 +31,10 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: const MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
   }
 }
@@ -86,26 +91,36 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Stack(
           children: [
             Container(
-              color: Color.fromARGB(255, 219, 184, 88),
+              color: BACKGROUND,
             ),
-            SingleChildScrollView(
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Mainpage(),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Mainpage(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: QuranCard(),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Sience(),
+                ),
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 1),
+                    child: ListView.builder(
+                        physics: BouncingScrollPhysics(),
+                        itemCount: RE_DATA.length,
+                        itemBuilder: (context, index) {
+                          return BookItem(
+                            itemData: RE_DATA[index],
+                          );
+                        }),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: QuranCard(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Sience(),
-                  ),
-                  LisBook()
-                ],
-              ),
+                ),
+              ],
             )
           ],
         ),

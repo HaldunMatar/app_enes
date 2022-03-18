@@ -5,10 +5,16 @@ const COLOR_ORANGE = Colors.deepOrange;
 const COLOR_GREY = Color(0xff9E9E9E);
 const COLOR_WHITE = Color(0xffFFA801);
 const COLOR_GREEN = Color(0xff7BB655);
-const BACKGROUND = Color.fromARGB(255, 219, 184, 88);
-const COLOR_WHITE1 = Color(0xffFFA801);
+const BACKGROUND = Color(0xfff4eee0);
 
-const color1 = Color(0xC4C4C4);
+const COLOR_WHITE1 = Color(0xffFFA801);
+const COLOR_FONT = Color(0xff2e5555);
+const COLOR_FONT3 = Color.fromARGB(46, 86, 86, 255);
+const COLOR_FONT1 = Color(0xff2e5555);
+
+const COLOR_progressing = Color(0xff2596be);
+
+const color1 = Color.fromARGB(0, 10, 10, 10);
 
 const TextTheme TEXT_THEME_DEFAULT = TextTheme(
     headline1: TextStyle(
