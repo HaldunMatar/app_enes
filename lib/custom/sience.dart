@@ -10,14 +10,19 @@ class Sience extends StatelessWidget {
     return Container(
       //  height: 200,
       //color: Color.fromARGB(255, 88, 182, 219),
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Text(
-          "المواد العلمية ",
-          textAlign: TextAlign.left,
-          style: TextStyle(
-              color: COLOR_FONT, fontSize: 20, fontWeight: FontWeight.bold),
-        ),
+      child: Row(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text(
+              "المواد العلمية ",
+              textAlign: TextAlign.left,
+              textDirection: TextDirection.rtl,
+              style: TextStyle(
+                  color: COLOR_FONT, fontSize: 20, fontWeight: FontWeight.bold),
+            ),
+          ),
+        ],
       ),
     );
   }
